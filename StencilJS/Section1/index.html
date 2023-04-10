@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Web Component</title>
+    <script src="modal.js"></script>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <uc-modal>
+        <h1 slot="title">The Modal Title</h1>
+        <p>This is our first web Component</p>
+    </uc-modal>
 </body>
 </html>
