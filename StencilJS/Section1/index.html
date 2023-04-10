@@ -12,5 +12,11 @@
         <h1 slot="title">The Modal Title</h1>
         <p>This is our first web Component</p>
     </uc-modal>
+    <script>
+        const modal = document.querySelector('uc-modal');
+        setTimeout(() => {
+            modal.open();
+        }, 3000);
+    </script>
 </body>
 </html>
