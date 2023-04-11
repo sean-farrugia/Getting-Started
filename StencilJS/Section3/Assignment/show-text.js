@@ -20,21 +20,19 @@ class ShowText extends HTMLElement {
         this._displayText = this.shadowRoot.querySelector('slot');
         this._button.addEventListener('click', this._showText.bind(this));
         this.shadowRoot.appendChild(this._button);
-        this.shadowRoot.appendChild(document.createElement('br'));
         this.shadowRoot.appendChild(this._displayText);
         this._showText();
     }
 
     _showText() {
-        console.log('fdafa')
-        if (this.isHidden == "true") {
+        if (this.isHidden == "false") {
             this._displayText.style.display = 'block';
             this._button.textContent = 'Hide';
-            this.isHidden = "false";
+            this.isHidden = "true";
           } else {
             this._displayText.style.display = 'none';
             this._button.textContent = 'Show';
-            this.isHidden = "true";
+            this.isHidden = "false";
           }
     }
 }
