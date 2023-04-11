@@ -17,7 +17,7 @@ class ShowText extends HTMLElement {
     connectedCallback() {
         if(this.hasAttribute('hide'))this.isHidden = this.getAttribute('hide');
         this._button = this.shadowRoot.querySelector('button');
-        this._displayText = this.shadowRoot.querySelector('slot');
+        this._displayText = this.shadowRoot.querySelector('p');
         this._button.addEventListener('click', this._showText.bind(this));
         this.shadowRoot.appendChild(this._button);
         this.shadowRoot.appendChild(this._displayText);
