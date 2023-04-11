@@ -19,8 +19,6 @@ class ShowText extends HTMLElement {
         this._button = this.shadowRoot.querySelector('button');
         this._displayText = this.shadowRoot.querySelector('p');
         this._button.addEventListener('click', this._showText.bind(this));
-        this.shadowRoot.appendChild(this._button);
-        this.shadowRoot.appendChild(this._displayText);
         this._showText();
     }
 
