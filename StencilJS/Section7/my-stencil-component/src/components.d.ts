@@ -6,56 +6,54 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface SfSideDrawer {
+        "my_title": string;
+        "open": () => Promise<void>;
+        "opened": boolean;
+    }
+    interface SfTooltip {
+        "showTip": boolean;
+        "tip": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLSfSideDrawerElement extends Components.SfSideDrawer, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLSfSideDrawerElement: {
+        prototype: HTMLSfSideDrawerElement;
+        new (): HTMLSfSideDrawerElement;
+    };
+    interface HTMLSfTooltipElement extends Components.SfTooltip, HTMLStencilElement {
+    }
+    var HTMLSfTooltipElement: {
+        prototype: HTMLSfTooltipElement;
+        new (): HTMLSfTooltipElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "sf-side-drawer": HTMLSfSideDrawerElement;
+        "sf-tooltip": HTMLSfTooltipElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface SfSideDrawer {
+        "my_title"?: string;
+        "opened"?: boolean;
+    }
+    interface SfTooltip {
+        "showTip"?: boolean;
+        "tip"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "sf-side-drawer": SfSideDrawer;
+        "sf-tooltip": SfTooltip;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sf-side-drawer": LocalJSX.SfSideDrawer & JSXBase.HTMLAttributes<HTMLSfSideDrawerElement>;
+            "sf-tooltip": LocalJSX.SfTooltip & JSXBase.HTMLAttributes<HTMLSfTooltipElement>;
         }
     }
 }

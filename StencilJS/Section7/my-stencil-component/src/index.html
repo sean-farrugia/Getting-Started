@@ -4,11 +4,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
 
+      .side-nav ul{
+        list-style: none;
+      }
+
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
     <script type="module" src="/build/my-stencil-component.esm.js"></script>
     <script nomodule src="/build/my-stencil-component.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <button id="sideDrawerButton">Open Side Menu</button>
+    <sf-side-drawer my_title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">A Link</a></li>
+          <li><a href="/">Another Link</a></li>
+          <li><a href="/">Anada Link</a></li>
+        </ul>
+      </nav>
+    </sf-side-drawer>
+
+    <p><sf-tooltip tip="This is your custom tooltip ready for action">Hello World, I am just some plain text!</sf-tooltip></p>
+
+    <script>
+      const sideDrawer = document.querySelector('sf-side-drawer');
+      const sideDrawerButton = document.querySelector('#sideDrawerButton');
+      sideDrawerButton.addEventListener('click', () => {
+        if(!sideDrawer.opened){
+          console.log('Opening Side Drawer...');
+          sideDrawer.open();
+        }
+      })
+    </script>
   </body>
 </html>

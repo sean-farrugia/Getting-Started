@@ -2,7 +2,7 @@ class Tooltip extends HTMLElement {
     constructor() {
         super();
         this._tooltipIcon;
-        this._tooltipVisible = true;
+        this._tooltipVisible = false;
         this._tooltipText = 'Some dummy tooltip text.'
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
