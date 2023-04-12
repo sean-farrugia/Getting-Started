@@ -6,13 +6,25 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface SfSpinner {
+    }
     interface SfStockFinder {
     }
     interface SfStockPrice {
         "stockSymbol": string;
     }
 }
+export interface SfStockFinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSfStockFinderElement;
+}
 declare global {
+    interface HTMLSfSpinnerElement extends Components.SfSpinner, HTMLStencilElement {
+    }
+    var HTMLSfSpinnerElement: {
+        prototype: HTMLSfSpinnerElement;
+        new (): HTMLSfSpinnerElement;
+    };
     interface HTMLSfStockFinderElement extends Components.SfStockFinder, HTMLStencilElement {
     }
     var HTMLSfStockFinderElement: {
@@ -26,17 +38,22 @@ declare global {
         new (): HTMLSfStockPriceElement;
     };
     interface HTMLElementTagNameMap {
+        "sf-spinner": HTMLSfSpinnerElement;
         "sf-stock-finder": HTMLSfStockFinderElement;
         "sf-stock-price": HTMLSfStockPriceElement;
     }
 }
 declare namespace LocalJSX {
+    interface SfSpinner {
+    }
     interface SfStockFinder {
+        "onSfSymbolSelected"?: (event: SfStockFinderCustomEvent<string>) => void;
     }
     interface SfStockPrice {
         "stockSymbol"?: string;
     }
     interface IntrinsicElements {
+        "sf-spinner": SfSpinner;
         "sf-stock-finder": SfStockFinder;
         "sf-stock-price": SfStockPrice;
     }
@@ -45,6 +62,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sf-spinner": LocalJSX.SfSpinner & JSXBase.HTMLAttributes<HTMLSfSpinnerElement>;
             "sf-stock-finder": LocalJSX.SfStockFinder & JSXBase.HTMLAttributes<HTMLSfStockFinderElement>;
             "sf-stock-price": LocalJSX.SfStockPrice & JSXBase.HTMLAttributes<HTMLSfStockPriceElement>;
         }
