@@ -6,11 +6,19 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface SfStockFinder {
+    }
     interface SfStockPrice {
         "stockSymbol": string;
     }
 }
 declare global {
+    interface HTMLSfStockFinderElement extends Components.SfStockFinder, HTMLStencilElement {
+    }
+    var HTMLSfStockFinderElement: {
+        prototype: HTMLSfStockFinderElement;
+        new (): HTMLSfStockFinderElement;
+    };
     interface HTMLSfStockPriceElement extends Components.SfStockPrice, HTMLStencilElement {
     }
     var HTMLSfStockPriceElement: {
@@ -18,14 +26,18 @@ declare global {
         new (): HTMLSfStockPriceElement;
     };
     interface HTMLElementTagNameMap {
+        "sf-stock-finder": HTMLSfStockFinderElement;
         "sf-stock-price": HTMLSfStockPriceElement;
     }
 }
 declare namespace LocalJSX {
+    interface SfStockFinder {
+    }
     interface SfStockPrice {
         "stockSymbol"?: string;
     }
     interface IntrinsicElements {
+        "sf-stock-finder": SfStockFinder;
         "sf-stock-price": SfStockPrice;
     }
 }
@@ -33,6 +45,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sf-stock-finder": LocalJSX.SfStockFinder & JSXBase.HTMLAttributes<HTMLSfStockFinderElement>;
             "sf-stock-price": LocalJSX.SfStockPrice & JSXBase.HTMLAttributes<HTMLSfStockPriceElement>;
         }
     }
