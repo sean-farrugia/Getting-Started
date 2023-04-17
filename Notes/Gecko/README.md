@@ -23,16 +23,16 @@ Stencil is the main compiler used in this repository. It is a "Web Components Co
 
 ## Node Version
 
-It is important to note that Gecko works with __Node Version__ ``14.21.3``. NVM can be used to fix this.
+It is important to note that Gecko works with __Node Version__ ``v14.17.0``, and __NPM Version__ ``v6.14.13``. NVM can be used to fix this.
 
 If you don't have the version run:
 ```nvm
-nvm install 14.21.3
+nvm install 14.17.0
 ```
 
 To switch to that specific node version:
 ```nvm
-nvm use 14.21.3
+nvm use 14.17.0
 ```
 
 ## Cloning and Installing the Repository
@@ -50,7 +50,7 @@ rm -rf node_modules/ && npm install
 ```
 
 ## Running the Repository
-```git
+```npm
 npm start
 ```
 
