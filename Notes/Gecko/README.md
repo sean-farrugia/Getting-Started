@@ -26,17 +26,17 @@ Stencil is the main compiler used in this repository. It is a "Web Components Co
 It is important to note that Gecko works with __Node Version__ ``v14.17.0``, and __NPM Version__ ``v6.14.13``. NVM can be used to fix this.
 
 If you don't have the version run:
-```nvm
+```bash
 nvm install 14.17.0
 ```
 
 To switch to that specific node version:
-```nvm
+```bash
 nvm use 14.17.0
 ```
 
 ## Cloning and Installing the Repository
-```git
+```bash
 git clone git@github.com:BetssonGroup/cbt-gecko-component-library.git
 cd cbt-gecko-component-library
 git checkout develop
@@ -45,12 +45,12 @@ npm install
 
 __NB__: If ``npm install`` seems to be having some trouble, just run the below code:
 
-```
+```bash
 rm -rf node_modules/ && npm install
 ```
 
 ## Running the Repository
-```npm
+```bash
 npm start
 ```
 
@@ -73,3 +73,47 @@ The __Host__ tag should be the outer element of each Web Component.
 Main aim is to always keep documentation up to date. Documentation also includes some coding standards and best practices to keep in mind when updating this repo. Whenever something new is added to this project, it is important to also __update__ the documentation as well.
 
 # WordPress Instance (Multiple Plugin) Repository
+In this repository, we connect the Component Library project along with this one so that we can extract all the custom components created and use them within the WordPress instance within blocks. Therefore, in this repository, __blocks__ are built from the components in order to be simply added to campaigns in an easy manner by other teams with less experience in web development.
+
+## Intstalling packages
+Before running this project, some plugins and dependencies must be installed by running the following code:
+
+```bash
+cd plugin/cbt-gecko-multiple-blocks-plugin
+npm install
+npm run start
+```
+## Running Application
+Once all the necessary packages are installed, first go to the desired branch of the Component Library repo and run the following code:
+
+```bash
+npm run build
+cd dist
+http-server --cors -p 3001
+```
+Once the server is up and running, in a different terminal, go to the repository of the WordPress Instance and run the following code:
+
+```bash 
+docker-compose build
+docker-compose up -d
+```
+
+If the above does not work, make sure that if you are using Windows, the `docker-entrypoint.sh` is LF as below on VSCode as below:
+
+<p align="center">
+  <img src="shellscript_note.png" alt="Shell Script Note"/>
+</p>
+
+## Generating a New Block
+To genereate a new block, the below code can be run:
+```bash
+npm run generate:block
+```
+The above will then ask certain details with regards to the new block which can be filled out.
+
+When generating a new block or modifying one, make sure to run the below code in order to update the application to using said block.
+
+```bash
+cd plugin/cbt-gecko-multiple-blocks-plugin
+npm run start
+```
