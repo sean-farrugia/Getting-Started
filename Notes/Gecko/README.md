@@ -104,6 +104,8 @@ If the above does not work, make sure that if you are using Windows, the `docker
   <img src="shellscript_note.png" alt="Shell Script Note"/>
 </p>
 
+__NB:__ When running the docker image for the first time, make sure to go to the plugins and activate the _Gecko Block Plugin_ along with the _Polylang_ plugins. Then go to _Languages/Settings_ and tick all the boxes in the _Custom post types_ setting. Finally, go to _Appearance/Themes_ and set the __Gecko__ theme to active.
+
 ## Generating a New Block
 To genereate a new block, the below code can be run:
 ```bash
