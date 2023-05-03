@@ -84,7 +84,7 @@ npm install
 npm run start
 ```
 ## Running Application
-Once all the necessary packages are installed, first go to the desired branch of the Component Library repo and run the following code:
+Once all the necessary packages are installed, first go to the desired branch of the __Component Library__ repo and run the following code:
 
 ```bash
 npm run build
