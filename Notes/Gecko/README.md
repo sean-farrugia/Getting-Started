@@ -88,10 +88,9 @@ Once all the necessary packages are installed, first go to the desired branch of
 
 ```bash
 npm run build
-cd dist
-http-server --cors -p 3001
+http-server ./dist --cors -p 3001
 ```
-Once the server is up and running, in a different terminal, go to the repository of the WordPress Instance and run the following code:
+Once the server is up and running, in a different terminal, go to the repository of the __WordPress Instance__ and run the following code:
 
 ```bash 
 docker-compose build
