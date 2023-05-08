@@ -47,5 +47,5 @@ Basic docker commands:
 - `docker stop` - stops all running containers
 - `docker stop container1 container2` - stops specified containers
 - `docker rm container1 container2` - remove specified containers
-- `docker exec -it IMAGE_ID bash` - enters virtual environment created by docker, where you have access to all the files stored in the container specified by the _IMAGE_ID_.
+- `docker exec -it IMAGE_ID bash` - enters virtual environment created by docker, where you have access to all the files stored in the container specified by the _IMAGE_ID_. Must run `winpty` before.
 - `docker logs container_name -f` - shows the logs sent by the cotainer _container_name_. `-f` is used to follow the logs like `watch`.
