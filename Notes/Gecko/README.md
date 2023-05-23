@@ -88,10 +88,9 @@ Once all the necessary packages are installed, first go to the desired branch of
 
 ```bash
 npm run build
-cd dist
-http-server --cors -p 3001
+http-server ./dist --cors -p 3001
 ```
-Once the server is up and running, in a different terminal, go to the repository of the WordPress Instance and run the following code:
+Once the server is up and running, in a different terminal, go to the repository of the __WordPress Instance__ and run the following code:
 
 ```bash 
 docker-compose build
@@ -118,4 +117,16 @@ When generating a new block or modifying one, make sure to run the below code in
 ```bash
 cd plugin/cbt-gecko-multiple-blocks-plugin
 npm run start
+```
+# Frontend Repository
+
+This repository practically represents how the WP campaigns created by the Wordpress Repo would actually show on the client's side.
+
+This can be accessed by pressing the __View Campaign__ button on the edit campaing page of the Wordpress application.
+
+In order to run this Frontend Application on local, the following code should be run in the Frontend Repository:
+```bash
+npm install
+npm run build
+npm start
 ```
