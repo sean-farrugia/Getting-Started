@@ -90,5 +90,4 @@ Whenever this error comes up:
 Go to plugins/dist and remove the __polylang-pro__ folder and rebuild the plugins directory.
 
 After that, ask for someone to give you the polylang-pro.zip file, then go to _Plugins_. Then click on __Add New__ and __Upload Plugin__, where you will choose the given zip file. Try using this polylang zip file below:
-
-<a href="polylang-pro.zip" download>Download Polylang Pro Zip</a>
+[Polylang Pro Zip](polylang-pro.zip)
